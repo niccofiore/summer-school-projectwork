@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Occupazione attesa delle corse · Autoguidovie</title>
+<style>
+  :root{color-scheme:light;
+    --bg:#f5f7fa;--card:#fff;--ink:#152230;--muted:#5c6a78;--line:#e4e9ef;
+    --accent:#0b6bcb;--accent-d:#084e95;--green:#2e9e5b;--orange:#f2a413;--red:#d63a2f;
+    --shadow:0 1px 3px rgba(16,32,48,.10),0 6px 20px rgba(16,32,48,.05);}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:860px;margin:0 auto;padding:26px 20px 60px}
+  .hero{background:linear-gradient(135deg,var(--accent),var(--accent-d));color:#fff;
+    border-radius:18px;padding:30px 28px;box-shadow:var(--shadow)}
+  .hero .kicker{font-size:12.5px;letter-spacing:.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .hero h1{margin:8px 0 6px;font-size:27px;line-height:1.2}
+  .hero p{margin:0;opacity:.92;font-size:15px;max-width:60ch}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px;box-shadow:var(--shadow)}
+  .stat .n{font-size:22px;font-weight:800;color:var(--accent-d)}
+  .stat .l{font-size:11.5px;color:var(--muted);margin-top:2px}
+  .ch{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:16px;box-shadow:var(--shadow)}
+  .ch .tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;
+    color:var(--accent-d);text-transform:uppercase;letter-spacing:.6px}
+  .ch .tag .num{background:var(--accent);color:#fff;border-radius:8px;width:26px;height:26px;
+    display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+  .ch h2{margin:12px 0 8px;font-size:20px}
+  .ch p{margin:0 0 10px;color:#26333f}
+  .ch p:last-child{margin-bottom:0}
+  ul.clean{margin:6px 0 0;padding:0;list-style:none}
+  ul.clean li{padding:9px 0;border-top:1px solid var(--line);display:flex;gap:12px}
+  ul.clean li:first-child{border-top:0}
+  ul.clean b{color:var(--ink)}
+  ul.clean .d{color:var(--muted);font-size:14px}
+  .pill{display:inline-block;background:#eef4fb;color:var(--accent-d);border:1px solid #d5e4f5;
+    border-radius:20px;padding:2px 10px;font-size:12.5px;font-weight:700;margin:2px 4px 2px 0}
+  .legend{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+  .legend .bar{height:12px;flex:1;min-width:160px;border-radius:6px;
+    background:linear-gradient(90deg,var(--green),var(--orange) 55%,var(--red))}
+  .legend .lab{font-size:12px;color:var(--muted)}
+  .callout{background:#f0f7f1;border:1px solid #cfe6d5;border-radius:12px;padding:12px 14px;margin-top:12px;font-size:14px}
+  .callout b{color:#1f7a44}
+  .foot{color:var(--muted);font-size:12px;margin-top:22px;text-align:center;line-height:1.6}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="kicker">Autoguidovie · estensione Travel Planner</div>
+    <h1>Occupazione attesa delle corse, su mappa</h1>
+    <p>Dal dato storico di conteggio passeggeri a una previsione visiva: quanto sarà pieno il bus, tratta per tratta, nel giorno scelto dal viaggiatore.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">97</div><div class="l">linee coperte</div></div>
+    <div class="stat"><div class="n">11,1 M</div><div class="l">rilevazioni storiche</div></div>
+    <div class="stat"><div class="n">~8.200</div><div class="l">fermate geolocalizzate</div></div>
+    <div class="stat"><div class="n">10 mesi</div><div class="l">di storico (set 25–lug 26)</div></div>
+  </div>
+
+  <div class="ch">
+    <div class="tag"><span class="num">1</span> La visione</div>
+    <h2>Rendere visibile l'affluenza prima di salire</h2>
+    <p>Il viaggiatore sceglie origine e destinazione nel Travel Planner e apre una soluzione. Invece di un semplice orario, vede la corsa su una mappa reale con ogni tratta fra due fermate colorata in base al riempimento atteso — dal verde (bus scarico) al rosso (affollato).</p>
+    <p>L'obiettivo è ridurre l'incertezza per chi viaggia, distribuire la domanda sulle corse meno cariche e migliorare la qualità percepita del servizio. La stessa logica vale per qualsiasi linea della rete, non per un singolo caso dimostrativo.</p>
+    <div class="legend"><span class="lab">Riempimento</span><span class="bar"></span><span class="lab">0% &middot; 50% &middot; 100%+</span></div>
+  </div>
+
+  <div class="ch">
+    <div class="tag"><span class="num">2</span> I dati</div>
+    <h2>Cosa alimenta la previsione</h2>
+    <ul class="clean">
+      <li><b>Conteggio passeggeri</b><span class="d">11,1 milioni di rilevazioni di pax a bordo per corsa e fermata — il cuore del modello.</span></li>
+      <li><b>Corse esercite</b><span class="d">direzione e mezzo assegnato a ciascuna corsa.</span></li>
+      <li><b>Anagrafica bus</b><span class="d">posti a sedere e capienza totale da libretto del veicolo.</span></li>
+      <li><b>Calendario di servizio</b><span class="d">periodicità di ogni giorno: feriale / sabato / festivo per stagione.</span></li>
+      <li><b>Fermate</b><span class="d">coordinate reali e nomi ufficiali (OpenStreetMap · GTFS stops).</span></li>
+      <li><b>Meteo</b><span class="d">Open-Meteo: storico per la calibrazione, previsto per l'uso in tempo reale.</span></li>
+    </ul>
+  </div>
+
+  <div class="ch">
+    <div class="tag"><span class="num">3</span> Il metodo</div>
+    <h2>Un modello spiegabile, non una scatola nera</h2>
+    <p>L'occupazione attesa di ogni segmento è la <b>media storica</b> dei passeggeri a bordo condizionata a ciò che conta davvero: <span class="pill">linea</span><span class="pill">direzione</span><span class="pill">periodicità</span><span class="pill">fascia oraria</span><span class="pill">fermata</span>. È robusta, verificabile e presentabile a chiunque, senza effetti da modello opaco.</p>
+    <p>Il meteo è stato <b>calibrato sui dati</b>, non ipotizzato: abbiamo unito lo storico meteo alle rilevazioni e misurato l'effetto reale linea per linea.</p>
+    <div class="callout">Risultato della calibrazione: su una rete <b>pendolare</b> il meteo sposta la domanda quasi per nulla (pioggia circa &minus;1/&minus;2%, freddo circa &minus;3%). La domanda è &ldquo;captive&rdquo;. Il coefficiente usato è quello vero, non un valore inventato.</div>
+    <p style="margin-top:12px">La consegna è una pagina web autonoma con mappa Leaflet e tile OpenStreetMap: previsione precalcolata dai dati, meteo richiesto in tempo reale dal browser.</p>
+  </div>
+
+  <div class="ch">
+    <div class="tag"><span class="num">4</span> Il risultato</div>
+    <h2>Un mockup funzionante, su tutte le linee</h2>
+    <p>Una singola pagina apribile in locale: si sceglie <b>linea → direzione → tratta → giorno</b> e la mappa mostra i segmenti colorati per riempimento, con dettaglio per singolo tratto, orari reali di salita e discesa, corse alternative e meteo del giorno. Il riempimento è leggibile sia sui posti a sedere sia sulla capienza totale.</p>
+    <p class="d" style="color:var(--muted);font-size:14px">Segue la demo dal vivo.</p>
+  </div>
+
+  <div class="foot">
+    Trasparenza: fermate, coordinate, orari e capienze sono dati reali; l'occupazione è una stima statistica dallo storico; il meteo previsto viene da Open-Meteo.<br>
+    Mockup dimostrativo (research preview) — i valori non costituiscono garanzia di servizio.
+  </div>
+
+</div>
+</body>
+</html>
