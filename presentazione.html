@@ -57,7 +57,7 @@
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="n">97</div><div class="l">linee coperte</div></div>
+    <div class="stat"><div class="n">18</div><div class="l">linee · Area Pavese</div></div>
     <div class="stat"><div class="n">11,1 M</div><div class="l">rilevazioni storiche</div></div>
     <div class="stat"><div class="n">~8.200</div><div class="l">fermate geolocalizzate</div></div>
     <div class="stat"><div class="n">10 mesi</div><div class="l">di storico (set 25–lug 26)</div></div>
@@ -67,7 +67,7 @@
     <div class="tag"><span class="num">1</span> La visione</div>
     <h2>Rendere visibile l'affluenza prima di salire</h2>
     <p>Il viaggiatore sceglie origine e destinazione nel Travel Planner e apre una soluzione. Invece di un semplice orario, vede la corsa su una mappa reale con ogni tratta fra due fermate colorata in base al riempimento atteso — dal verde (bus scarico) al rosso (affollato).</p>
-    <p>L'obiettivo è ridurre l'incertezza per chi viaggia, distribuire la domanda sulle corse meno cariche e migliorare la qualità percepita del servizio. La stessa logica vale per qualsiasi linea della rete, non per un singolo caso dimostrativo.</p>
+    <p>L'obiettivo è ridurre l'incertezza per chi viaggia, distribuire la domanda sulle corse meno cariche e migliorare la qualità percepita del servizio. Il prototipo copre le 18 linee dell'Area Pavese, non un singolo caso dimostrativo.</p>
     <div class="legend"><span class="lab">Riempimento</span><span class="bar"></span><span class="lab">0% &middot; 50% &middot; 100%+</span></div>
   </div>
 
@@ -88,23 +88,17 @@
     <div class="tag"><span class="num">3</span> Il metodo</div>
     <h2>Un modello spiegabile, non una scatola nera</h2>
     <p>L'occupazione attesa di ogni segmento è la <b>media storica</b> dei passeggeri a bordo condizionata a ciò che conta davvero: <span class="pill">linea</span><span class="pill">direzione</span><span class="pill">periodicità</span><span class="pill">fascia oraria</span><span class="pill">fermata</span>. È robusta, verificabile e presentabile a chiunque, senza effetti da modello opaco.</p>
-    <p>Il meteo è stato <b>calibrato sui dati</b>, non ipotizzato: abbiamo unito lo storico meteo alle rilevazioni e misurato l'effetto reale linea per linea.</p>
-    <div class="callout">Risultato della calibrazione: su una rete <b>pendolare</b> il meteo sposta la domanda quasi per nulla (pioggia circa &minus;1/&minus;2%, freddo circa &minus;3%). La domanda è &ldquo;captive&rdquo;. Il coefficiente usato è quello vero, non un valore inventato.</div>
-    <p style="margin-top:12px">La consegna è una pagina web autonoma con mappa Leaflet e tile OpenStreetMap: previsione precalcolata dai dati, meteo richiesto in tempo reale dal browser.</p>
+    <p>Il meteo è stato <b>calibrato sui dati</b>, non ipotizzato: abbiamo unito lo storico meteo alle rilevazioni e misurato l'effetto reale. Le stime per singola linea si sono rivelate rumore (poche giornate estreme); usiamo quindi un <b>unico coefficiente globale</b>, uguale per tutte le linee, applicato all'ora della corsa.</p>
+    <div class="callout">Risultato della calibrazione: su una rete <b>pendolare</b> il meteo sposta la domanda quasi per nulla (pioggia circa &minus;1%, freddo circa &minus;3%, caldo &minus;1%). La domanda è &ldquo;captive&rdquo;. È un coefficiente misurato e trasparente, non un valore inventato — e resta volutamente piccolo perché tale è nella realtà.</div>
+    <p style="margin-top:12px">La consegna è una pagina web autonoma con mappa Leaflet e tile OpenStreetMap: previsione precalcolata dai dati, meteo orario richiesto in tempo reale dal browser.</p>
   </div>
 
   <div class="ch">
     <div class="tag"><span class="num">4</span> Il risultato</div>
-    <h2>Un mockup funzionante, su tutte le linee</h2>
-    <p>Una singola pagina apribile in locale: si sceglie <b>linea → direzione → tratta → giorno</b> e la mappa mostra i segmenti colorati per riempimento, con dettaglio per singolo tratto, orari reali di salita e discesa, corse alternative e meteo del giorno. Il riempimento è leggibile sia sui posti a sedere sia sulla capienza totale.</p>
+    <h2>Un mockup funzionante, sulle linee dell'Area Pavese</h2>
+    <p>Una singola pagina apribile in locale: si sceglie <b>linea → direzione → tratta → giorno</b> e la mappa mostra i segmenti colorati per riempimento, con dettaglio per singolo tratto, orari reali di salita e discesa, corse alternative e meteo all'ora della corsa. Il riempimento è leggibile sia sui posti a sedere sia sulla capienza totale.</p>
     <p class="d" style="color:var(--muted);font-size:14px">Segue la demo dal vivo.</p>
   </div>
 
   <div class="foot">
-    Trasparenza: fermate, coordinate, orari e capienze sono dati reali; l'occupazione è una stima statistica dallo storico; il meteo previsto viene da Open-Meteo.<br>
-    Mockup dimostrativo (research preview) — i valori non costituiscono garanzia di servizio.
-  </div>
-
-</div>
-</body>
-</html>
+    Trasparenza: fermate, 
